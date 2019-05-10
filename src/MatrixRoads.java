@@ -20,7 +20,6 @@ public class MatrixRoads {
         boolean equal = false;
 
         while (!equal) {
-            //System.out.println("Indeces are invalid, please enter new indeces");
             int[] indecesArray = newIndeces();
             int line = indecesArray[0];
             int col = indecesArray[1];
@@ -73,7 +72,6 @@ public class MatrixRoads {
         return indecesArray;
     }
 
-
     public static void showRoads(Road[][] roadMatrix) {
         for (int i = 0; i < roadMatrix.length; i++) {
             for (int j = 0; j < roadMatrix[i].length; j++) {
@@ -91,20 +89,13 @@ public class MatrixRoads {
 
     public static void showCityRoads(Road[][] roadMatrix) {
         Scanner sc = new Scanner(System.in);
-
         System.out.println("Enter a city number from 0 to 4 to find roads with other cities if they are exist: ");
         int searchCity = sc.nextInt();
         System.out.println("The cities that have roads with " + searchCity + " are: ");
-        for (int i = 0; i < roadMatrix.length; i++) {
-            for (int j = 0; j < roadMatrix[i].length; j++) {
-                if (i == searchCity && roadMatrix[i][j] != null) {
-                    System.out.println(roadMatrix[i][j].distance + " - " + roadMatrix[i][j].duration);
-                }
+        for (int j = 0; j < roadMatrix.length; j++) {
+            if (roadMatrix[searchCity][j] != null) {
+                System.out.println(roadMatrix[searchCity][j].distance + " - " + roadMatrix[searchCity][j].duration);
             }
         }
     }
-
 }
-
-
-
