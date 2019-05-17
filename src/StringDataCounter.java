@@ -1,6 +1,6 @@
 public class StringDataCounter {
     public static void main(String[] args) {
-        String str = "Notre Dame is a very old' cathedral' in Paris, France. It is one of France's most famous landmarks and many people visit it each year. The cathedral is on a small island on the River Seine. It is the cathedral of the Catholic Archdiocese of Paris, one of 23 archdioceses in France. The cathedral was built during two centuries. It is a very good example of Gothic Architecture in France. At the time it was finished, the cathedral was the biggest such building in Western Europe. Between 1844 and 1864, the building was renovated under the direction of Eugène Viollet-le-Duc, who incorporated elements into the design that the medieval building had not possessed before. The two rose windows which ornate the transept are among the biggest in Europe: each has a diameter of 13m.";
+        String str = "Notre Dame is a very old cathedral in Paris, France. It is one of France's most famous landmarks and many people visit it each year. The cathedral is on a small island on the River Seine. It is the cathedral of the Catholic Archdiocese of Paris, one of 23 archdioceses in France. The cathedral was built during two centuries. It is a very good example of Gothic Architecture in France. At the time it was finished, the cathedral was the biggest such building in Western Europe. Between 1844 and 1864, the building was renovated under the direction of Eugène Viollet-le-Duc, who incorporated elements into the design that the medieval building had not possessed before. The two rose windows which ornate the transept are among the biggest in Europe: each has a diameter of 13m.";
 
         System.out.println("number of words: " + countWords(str));
         int[] vowelsAndConsonant = countVowelsAndConsonant(str);
@@ -22,12 +22,12 @@ public class StringDataCounter {
         int vowelsCount = 0;
         int consonantCount = 0;
         String sir = input.toLowerCase();
-        String vowels = "aeiouy";
+        String vowels = "aeiou";
         char[] inputCharArray = sir.toCharArray();
         for (char c : inputCharArray) {
             if (vowels.indexOf(c) != -1) {
                 vowelsCount++;
-            } else if (c != ' ' && c != '.' && c != ',' && c != '\'' && c != '-') {
+            } else if (Character.isLetter(c)) {
                 consonantCount++;
             }
         }
